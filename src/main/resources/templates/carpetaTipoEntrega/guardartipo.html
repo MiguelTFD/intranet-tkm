@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 class="my-4 text-2xl text-center">Registrar Nuevo Estado</h2>
+	<form method="post" th:action="@{/guardartipo}" th:object="${estudiante}" class="max-w-md mx-auto">
+		<div th:if="${estudiante.id_tipo_entrega != 0}" class="relative z-0 w-full mb-5 group">
+			<input readonly="readonly" th:field="*{id_tipo_entrega}" placeholder="Ingrese Tipo" required/>
+		</div>
+		<div>
+			<input th:field="*{nombre_tipo}" placeholder="Ingrese nombre" required/>
+		</div>
+		<button>Guardar</button>
+		<a href="/listadotipo">Cancelar</a>
+	</form>
+</body>
+</html>
