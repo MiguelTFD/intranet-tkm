@@ -59,7 +59,7 @@ public class ProductoController {
 
     @PostMapping("/actualizar/{id}")
     public String actualizarProducto(@PathVariable("id") int id, @ModelAttribute("producto") Producto producto) {
-        producto.setIdProducto(id);
+        producto.setId_producto(id);
         productoService.guardar(producto);
         return "redirect:/producto";
     }

@@ -11,21 +11,23 @@
     <form th:action="@{/producto}" th:object="${producto}" method="post">
         <div class="mb-3">
             <label for="nombreProducto" class="form-label">Nombre del Producto</label>
-            <input type="text" th:field="*{nombreProducto}" class="form-control" id="nombreProducto" required>
+            <input type="text" th:field="*{nombre_producto}" class="form-control" id="nombreProducto" required>
         </div>
         <div class="mb-3">
             <label for="categoria" class="form-label">Categoría</label>
-            <select th:field="*{categoria}" class="form-control" id="categoria" required>
-                <option th:each="categoria : ${categorias}" th:value="${categoria}" th:text="${categoria.nombreCategoria}"></option>
+            <select th:field="*{categoria.id_categoria}" class="form-control" id="categoria" required>
+                <option th:each="categoria : ${categorias}"
+                        th:value="${categoria.id_categoria}"
+                        th:text="${categoria.nombre_categoria}"></option>
             </select>
         </div>
         <div class="mb-3">
             <label for="precioUni" class="form-label">Precio Unitario</label>
-            <input type="number" th:field="*{precioUni}" class="form-control" id="precioUni" step="0.01" required>
+            <input type="number" th:field="*{precio_uni}" class="form-control" id="precioUni" step="0.01" required>
         </div>
         <div class="mb-3">
             <label for="stockProducto" class="form-label">Stock</label>
-            <input type="number" th:field="*{stockProducto}" class="form-control" id="stockProducto" required>
+            <input type="number" th:field="*{stock_producto}" class="form-control" id="stockProducto" required>
         </div>
         <button type="submit" class="btn btn-success">Guardar</button>
         <a href="/producto" class="btn btn-secondary">Cancelar</a>

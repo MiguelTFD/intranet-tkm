@@ -21,13 +21,13 @@
         </thead>
         <tbody>
         <tr th:each="producto : ${productos}">
-            <td th:text="${producto.idProducto}"></td>
-            <td th:text="${producto.nombreProducto}"></td>
-            <td th:text="${producto.precioUni}"></td>
-            <td th:text="${producto.stockProducto}"></td>
+            <td th:text="${producto.id_producto}"></td>
+            <td th:text="${producto.nombre_producto}"></td>
+            <td th:text="${producto.precio_uni}"></td>
+            <td th:text="${producto.stock_producto}"></td>
             <td>
-                <a th:href="@{/producto/editar/{id}(id=${producto.idProducto})}" class="btn btn-warning">Editar</a>
-                <a th:href="@{/producto/eliminar/{id}(id=${producto.idProducto})}" class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/producto/editar/{id}(id=${producto.id_producto})}" class="btn btn-warning">Editar</a>
+                <a th:href="@{/producto/eliminar/{id}(id=${producto.id_producto})}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>

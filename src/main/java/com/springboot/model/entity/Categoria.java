@@ -10,30 +10,38 @@ public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCategoria;
+    private int id_categoria;
 
-    @Column(name = "nombreCategoria",nullable = false,unique = true,length = 100)
-    private String nombreCategoria;
+    @Column(name = "nombre_categoria",nullable = false,unique = true,length = 100)
+    private String nombre_categoria;
 
-    @OneToMany(mappedBy = "_usuario")
+    @OneToMany(mappedBy = "categoria")
     private List<Producto> productos;
 
     public Categoria() {
     }
 
-    public int getIdCategoria() {
-        return idCategoria;
+    public int getId_categoria() {
+        return id_categoria;
     }
 
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setId_categoria(int id_categoria) {
+        this.id_categoria = id_categoria;
     }
 
-    public String getNombreCategoria() {
-        return nombreCategoria;
+    public String getNombre_categoria() {
+        return nombre_categoria;
     }
 
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
+    public void setNombre_categoria(String nombre_categoria) {
+        this.nombre_categoria = nombre_categoria;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 }
